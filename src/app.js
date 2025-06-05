@@ -1,7 +1,8 @@
 import express from 'express'
+import chalk from 'chalk'
 import { config } from './config.js'
 import { query } from './database.js'
-import chalk from 'chalk'
+import { error, success } from './response.js'
 
 /**
  * Create an Express application instance.
@@ -78,7 +79,33 @@ app.get('/movies', async (_, res) => {
     const rows = await query('SELECT * FROM movies')
 
     // Set the response code to 200 and send the resulting records to the client
-    res.status(200).send(rows)
+    res.status(200).send(success('Retrieved all movies.', rows))
+})
+
+/**
+ * Retrieve a movie by its year.
+ *
+ * This endpoint handles GET requests to `/movie?year=YYYY`, where `YYYY` is the
+ * year of the movie you want to retrieve. It queries the database for a movie
+ * with the specified year and returns it if found. If no movie is found for
+ * the specified year, it returns a 404 Not Found error.
+ */
+app.get('/movie', async (req, res) => {
+    const year = req.query.year
+    const rows = await query(
+        `
+            SELECT * FROM movies
+            WHERE year = ?
+            LIMIT 1
+        `,
+        [year]
+    )
+
+    if (rows.length > 0) {
+        res.send(success('Retrieved movie.', rows[0]))
+    } else {
+        res.send(error(`No movies found for the year ${year}.`))
+    }
 })
 
 /**
@@ -90,11 +117,8 @@ app.get('/movies', async (_, res) => {
  * if no other route matches the request. If a route matches, the middleware
  * will not be called.
  */
-app.use((req, res) => {
-    res.status(404).send({
-        error: 'Resource Not Found.',
-        url: req.url,
-    })
+app.use((_, res) => {
+    res.status(404).send(error('Resource Not Found.'))
 })
 
 /**
