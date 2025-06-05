@@ -7,15 +7,15 @@
 
 1. Clone this repository to your local machine in a proper directory.
 
-    ```bash
-    $ git clone https://github.com/TypingHare/movie-app.git
-    ```
+   ```bash
+   $ git clone https://github.com/TypingHare/movie-app.git -b android movie-app@android
+   ```
 
 2. Install [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/).
 
 3. Open **JetBrains Toolbox** and look for **Android Studio** in `Tools > Available`. Click the `Install` button.
 
-4. Open **Android Studio** and Open the directory. Make sure you are opening the correct directory, which contains `build.gradle.kts`. **Android Studio** will look for this file to initialize the Android project and throw errors if it is not found.
+4. Open **Android Studio** and Open the directory (`movie-app@android`). Make sure you are opening the correct directory, which contains `build.gradle.kts`. **Android Studio** will look for this file to initialize the Android project and throw errors if it is not found.
 
 5. Opening an Android project for the first time usually takes over five minutes. Please be patient. Once you see that the sidebar has an `app` folder and a `Gradle Scripts` item, the import process is complete.
 
