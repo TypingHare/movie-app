@@ -8,8 +8,8 @@
 
 # Gradle cache
 .gradle
-/local.properties
-/build
-/captures
+local.properties
+build
+captures
 .externalNativeBuild
 .cxx
