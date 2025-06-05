@@ -51,11 +51,11 @@ We are going to use the following dependencies in this project. You can also add
 
 - [express](https://www.npmjs.com/package/express): A popular and lightweight backend framework for handling HTTP requests.
 - [mysql2](https://www.npmjs.com/package/mysql2): A popular library for connecting to MySQL database.
-- [chalk](https://www.npmjs.com/package/chalk): A library that color .
+- [chalk](https://www.npmjs.com/package/chalk): A library that color strings in the terminal.
 
 ## Database
 
-You need to set up a MySQL database to run this project. You can use any MySQL client.
+You need to set up a MySQL database to run this project. You can use any MySQL clients.
 
 - On macOS, I recommend using Homebrew to install [MySQL 8](https://formulae.brew.sh/formula/mysql).
 - On Windows, you can use [XAMPP](https://www.apachefriends.org/index.html).
@@ -78,4 +78,9 @@ $ node src/app.js
 ```
 
 > [!IMPORTANT]
-> Please read the JavaScript files in `src` carefully.
+> Please read the JavaScript files in `src` carefully in the following order:
+>
+> - [src/config.js](src/config.js)
+> - [src/database.js](src/database.js)
+> - [src/app.js](src/app.js)
+> - [src/response.js](src/response.js)
