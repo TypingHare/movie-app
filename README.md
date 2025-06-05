@@ -45,6 +45,14 @@ $ npm install
 >
 > The `package.json` file in the root directory contains the information about this project that is managed by npm. It includes the dependencies, scripts, and other metadata about the project. When you run `npm install`, npm reads the `package.json` file and installs the dependencies (both `dependencies` and `devDependencies`) listed in it.
 
+## Dependencies
+
+We are going to use the following dependencies in this project. You can also add more.
+
+- [express](https://www.npmjs.com/package/express): A popular and lightweight backend framework for handling HTTP requests.
+- [mysql2](https://www.npmjs.com/package/mysql2): A popular library for connecting to MySQL database.
+- [chalk](https://www.npmjs.com/package/chalk): A library that color .
+
 ## Database
 
 You need to set up a MySQL database to run this project. You can use any MySQL client.
@@ -54,14 +62,6 @@ You need to set up a MySQL database to run this project. You can use any MySQL c
 - If you are using Linux, you should be able to install it on your own. Good luck, Linux bro.
 
 After installing MySQL, import the `sql/movie.sql` file into your MySQL database. This file contains the schema and sample data for the Movie app.
-
-## Dependencies
-
-We are going to use the following dependencies in this project. You can also add more.
-
-- [express](https://www.npmjs.com/package/express): A popular and lightweight backend framework for handling HTTP requests.
-- [mysql2](https://www.npmjs.com/package/mysql2): A popular library for connecting to MySQL database.
-- [chalk](https://www.npmjs.com/package/chalk): A library that color .
 
 ## Run
 
