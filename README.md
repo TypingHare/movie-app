@@ -1,4 +1,4 @@
-# [Movie App]()
+# [Movie App](https://github.com/TypingHare/movie-app)
 
 > [!NOTE]
 > This branch is the backend of Movie. For the Android app see [android branch](https://github.com/TypingHare/movie-app/tree/android).
@@ -25,7 +25,7 @@ $ npm --version
 Use git to clone this repository to a proper directory on your computer:
 
 ```bash
-$ git clone https://github.com/TypingHare/movie-app
+$ git clone git@github.com:TypingHare/movie-app.git
 ```
 
 Then, navigate to the `movie-app` directory:
