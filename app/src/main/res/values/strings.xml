@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">movie-app</string>
+    <string name="welcome">Welcome!</string>
+    <string name="click_me">Click me</string>
+</resources>
