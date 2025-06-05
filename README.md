@@ -10,7 +10,7 @@
 - [Download Node.js](https://nodejs.org/en/download)
 - [Downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-The Node.js package manager (npm) is included with Node.js. To verify that Node.js and npm are installed correctly, run the following commands in your terminal:
+The Node.js package manager (npm) is included with Node.js. To verify that Noode.js and npm are installed correctly, run the following commands in your terminal:
 
 ```bash
 $ node --version
@@ -47,6 +47,8 @@ $ npm install
 
 ## Dependencies
 
-### [express](https://www.npmjs.com/package/express)
+We are going to use the following dependencies in this project. You can also add more.
 
-### [mysql2](https://www.npmjs.com/package/mysql2)
+- [express](https://www.npmjs.com/package/express): A popular and lightweight backend framework for handling HTTP requests.
+- [mysql2](https://www.npmjs.com/package/mysql2): A popular library for connecting to MySQL database.
+- [chalk](https://www.npmjs.com/package/chalk): A library that color .
