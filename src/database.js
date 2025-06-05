@@ -2,10 +2,6 @@ import mysql from 'mysql2/promise'
 import { config } from './config.js'
 
 /**
- * Initialize a connection between the backend and the MySQL database.
- */
-
-/**
  * Connect to the database. Here, the [connect] function accepts a callback
  * function, which is called after the connection succeeds or fails.
  *
