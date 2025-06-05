@@ -1,7 +1,7 @@
 # [Movie App]()
 
 > [!NOTE]
-> This branch is the backend of Movie. For the Android app see [android branch](https://github.com/TypingHare/movie-app/branch/android).
+> This branch is the backend of Movie. For the Android app see [android branch](https://github.com/TypingHare/movie-app/tree/android).
 
 ## Installation
 
