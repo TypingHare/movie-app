@@ -1,0 +1,36 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "The backend of the Movie app.",
+  "keywords": [
+    "backend"
+  ],
+  "homepage": "https://github.com/TypingHare/move-app#readme",
+  "license": "MIT",
+  "author": {
+    "name": "James Chen",
+    "email": "zhuojian_chen@student.uml.edu"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/app.js",
+    "install-sql": "mysql -u root -p < sql/movie.sql"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "useTabs": false,
+    "printWidth": 80
+  }
+}
