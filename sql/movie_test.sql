@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS movies (
 );
 
 -- Insert movie records
-INSERT INTO movies (title, year, length, genre) VALUES 
-('Gone With the Wind', 1939, 231, 'drama'),
-('Star Wars', 1977, 124, 'sciFi');
+INSERT INTO movies (title, year, length, genre) 
+VALUES ('Gone With the Wind', 1939, 231, 'drama');
+
+INSERT INTO movies (title, year, length, genre) 
+VALUES ('Star Wars', 1977, 124, 'sciFi');
