@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS movie_test;
 
 -- Use the created database
-USE movie;
+USE movie_test;
 
 -- Create the movies table
 CREATE TABLE IF NOT EXISTS movies (
