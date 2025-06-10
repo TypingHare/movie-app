@@ -13,8 +13,8 @@
 The Node.js package manager (npm) is included with Node.js. To verify that Noode.js and npm are installed correctly, run the following commands in your terminal:
 
 ```bash
-$ node --version
-$ npm --version
+node --version
+npm --version
 ```
 
 > [!TIP]
@@ -25,19 +25,19 @@ $ npm --version
 Use git to clone this repository to a proper directory on your computer:
 
 ```bash
-$ git clone git@github.com:TypingHare/movie-app.git
+git clone git@github.com:TypingHare/movie-app.git
 ```
 
 Then, navigate to the `movie-app` directory:
 
 ```bash
-$ cd movie-app
+cd movie-app
 ```
 
 Next, install the dependencies using npm:
 
 ```bash
-$ npm install
+npm install
 ```
 
 > [!TIP]
@@ -68,13 +68,13 @@ After installing MySQL, import the `sql/movie.sql` file into your MySQL database
 After installing the dependencies, you can start the project using the following command:
 
 ```bash
-$ npm start
+npm start
 ```
 
 This will run the script in the `package.json` (See the `scripts` section). Basically, it would run the following command:
 
 ```bash
-$ node src/app.js
+node src/app.js
 ```
 
 > [!IMPORTANT]

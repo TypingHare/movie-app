@@ -13,7 +13,7 @@ export const config = {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'movie',
+        database: 'movie_test',
     },
 
     // Server configuration

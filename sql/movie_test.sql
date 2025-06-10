@@ -1,5 +1,5 @@
--- Create the database if it doesn't already exist
-CREATE DATABASE IF NOT EXISTS movie;
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS movie_test;
 
 -- Use the created database
 USE movie;
