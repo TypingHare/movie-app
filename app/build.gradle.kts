@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "edu.uml.movie_app"
-        minSdk = 30
+        minSdk = 33
         //noinspection OldTargetApi
         targetSdk = 35
         versionCode = 1

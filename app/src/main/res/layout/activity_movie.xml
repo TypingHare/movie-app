@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/tvMovieTitle"
+            android:id="@+id/movieTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/title"
@@ -30,7 +30,7 @@
             android:background="#EEEEEE" />
 
         <TextView
-            android:id="@+id/tvLength"
+            android:id="@+id/movieLength"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/length"
@@ -39,6 +39,12 @@
             android:padding="12dp"
             android:layout_marginTop="24dp"
             android:background="#F5F5F5" />
-    </LinearLayout>
 
+        <Button
+            android:id="@+id/movieButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

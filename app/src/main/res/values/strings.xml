@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">movie-app</string>
+    <string name="app_name">Movie App</string>
     <string name="welcome">Welcome!</string>
     <string name="click_me">Click me</string>
     <string name="find_the_title_and_length_of_movies_with_input_year">Find the title and length of movies with input year:</string>
@@ -7,5 +7,12 @@
     <string name="submit_query">Submit Query</string>
     <string name="title">Title</string>
     <string name="length">Length</string>
-    <string name="movie_title">Movie Title</string>
+    <string name="filtered_movies">Filtered Movies</string>
+    <string name="back">Back</string>
+    <string name="find_movies_acted_by_actor">Find movies acted by actor:</string>
+    <string name="actor_name">Actor name</string>
+    <string name="filter_movies">Filter Movies</string>
+    <string name="change_the_length_of_the_movie_star_wars">Change the length of the movie Star Wars:</string>
+    <string name="movie_length">Movie length</string>
+    <string name="update_movie_length">Update Movie Length</string>
 </resources>

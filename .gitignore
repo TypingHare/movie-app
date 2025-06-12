@@ -13,3 +13,6 @@ build
 captures
 .externalNativeBuild
 .cxx
+
+# Other
+all.txt
