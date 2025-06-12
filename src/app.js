@@ -13,9 +13,18 @@ import { error, success } from './response.js'
 export const app = express()
 
 /**
+ * Register a middleware that accepts `x-www-form-urlencoded` data in the HTTP
+ * request body.
+ */
+app.use(express.urlencoded({ extended: true }))
+
+/**
  * Register a middleware that logs the request method and URL to the console.
  * This middleware is called for every incoming request, which is useful for
  * debugging and monitoring purposes.
+ *
+ * NOTE: Logging is very important in software development. You may want to
+ * develop a more robust and informative logging system in the future.
  *
  * @link https://expressjs.com/en/guide/using-middleware.html
  */
@@ -32,7 +41,7 @@ app.use((req, _, next) => {
 /**
  * Define a route that handles GET requests to the `/movies` endpoint.
  *
- * This serves an endpoint that handles the GET request to `/movies`. When
+ * This serves as an endpoint that handles the GET request to `/movies`. When
  * Express receives a request, it looks for a matching route. For example,
  * if the request is a GET request to `/movies`, it will fire the callback
  * function below.
@@ -83,12 +92,18 @@ app.get('/movies', async (_, res) => {
 })
 
 /**
- * Retrieve a movie by its year.
+ * Retrieves a movie by its year.
  *
  * This endpoint handles GET requests to `/movie?year=YYYY`, where `YYYY` is the
  * year of the movie you want to retrieve. It queries the database for a movie
  * with the specified year and returns it if found. If no movie is found for
  * the specified year, it returns a 404 Not Found error.
+ *
+ * NOTE: The URL this endpoint matches is `/movie`, which does not comply with
+ * RESTful conventions. Check out the following link for more information about
+ * RESTful API design:
+ *
+ * @link https://www.geeksforgeeks.org/node-js/rest-api-introduction/
  */
 app.get('/movie', async (req, res) => {
     const year = req.query.year
@@ -102,9 +117,81 @@ app.get('/movie', async (req, res) => {
     )
 
     if (rows.length > 0) {
-        res.send(success('Retrieved movie.', rows[0]))
+        res.send(success(`Retrieved movie in ${year}.`, rows[0]))
     } else {
         res.send(error(`No movies found for the year ${year}.`))
+    }
+})
+
+/**
+ * Retrieves all movies where an actor is in.
+ *
+ * This endpoint handles GET requests to `/movie/:actor`, where `:actor` is a
+ * placeholder for the name of the actor. For instance, the following URL would
+ * match this route:
+ *
+ *     /movie/Vivien%20Leigh
+ *
+ * Here, `%20` represents a space character in the URL.
+ *
+ * The `req.params` object contains the parameters from the URL. In this case,
+ * `req.params.actor` will contain the name of the actor.
+ */
+app.get('/movies/:actor', async (req, res) => {
+    const actor = req.params.actor
+    const rows = await query(
+        `
+            SELECT movies.* FROM movies
+            JOIN acts ON acts.movie_id = movies.id
+            JOIN actors ON acts.actor_id = actors.id
+            WHERE actors.name = ?
+        `,
+        [actor]
+    )
+
+    if (rows.length > 0) {
+        res.send(success('Retrieved all movies where an actor is in.', rows))
+    } else {
+        res.send(error(`No movies are found with the actor: ${actor}.`))
+    }
+})
+
+/**
+ * Updates a movie's information.
+ *
+ * This endpoint handles PUT requests to `/movies/:id`, where the request body
+ * is a JSON object containing the movie's length and genre. It updates the
+ * length and genre of the movie with the specified ID in the database.
+ *
+ * NOTE: In RESTful API design, the PUT method is used to update an existing
+ * resource.
+ *
+ * NOTE: Unlike the GET method, where the parameters are passed in the URL,
+ * the PUT method (and other methods other than GET) typically sends the
+ * parameters in the request body (especially credential data).
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
+ */
+app.put('/movies/:id', async (req, res) => {
+    const id = req.params.id
+    const { length, genre } = req.body
+
+    // Update the movie in the database
+    try {
+        await query(
+            `
+            UPDATE movies
+            SET length = ?, genre = ?
+            WHERE id = ?
+        `,
+            [length, genre, id]
+        )
+
+        // Send a success response
+        res.send(success(`Updated movie with ID ${id}.`))
+    } catch (error) {
+        const message = error.message
+        res.send(success(`Failed to update movie with ID ${id}: ${message}`))
     }
 })
 
