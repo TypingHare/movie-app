@@ -63,6 +63,10 @@ public class MovieQueryActivity extends AppCompatActivity {
     private void getMovieByYear(final int year) {
         Response.Listener<String> responseListener = response -> {
             final var data = (JSONObject) parseJsonObjectAndGetData(response, false);
+            if (data == null) {
+                return;
+            }
+
             final var movieDto = parseMovieRecordDto(data);
             final var intent = new Intent(MovieQueryActivity.this, MovieActivity.class);
             intent.putExtra("movieDto", movieDto);
@@ -126,6 +130,7 @@ public class MovieQueryActivity extends AppCompatActivity {
                 new AlertDialog.Builder(MovieQueryActivity.this).setMessage(
                         jsonObject.getString("message")).setNegativeButton("Retry", null).create()
                     .show();
+                return null;
             }
 
             //noinspection unchecked
